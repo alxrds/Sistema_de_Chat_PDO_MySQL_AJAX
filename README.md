@@ -1,2 +1,2 @@
-# Sistema_de_Chat_PDO_MySQL_AJAX
+# Sistema de Chat PDO MySQL AJAX
 Sistema Simples de Chat com PDO, MySQL e AJAX
