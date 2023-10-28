@@ -5,10 +5,10 @@
     $user = $_POST['usuario'];
     $id = uniqid()."53cR37".uniqid();
 
-    if($_SERVER['REQUEST_METHOD']== "POST" && !empty($user)){
+    if($_SERVER['REQUEST_METHOD'] == "POST" && !empty($user)){
 
-        $query = $db->prepare("INSERT INTO chat SET nome = ?, chatkey = ?");
-        $run = $query->execute([$user, $id]);
+        $query = $db->prepare("INSERT INTO chat SET chatkey = ?");
+        $run = $query->execute([$id]);
 
         if($run){
             $_SESSION['user'] = $user;

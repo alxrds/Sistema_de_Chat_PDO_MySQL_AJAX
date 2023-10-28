@@ -13,8 +13,8 @@
         if(count($res) == 0){
             echo "O chat não existe";
         }else{
-            $query = $db->prepare("INSERT INTO chat SET nome = ?, chatkey = ?");
-            $run = $query->execute([$user, $id]);
+            $query = $db->prepare("INSERT INTO chat SET chatkey = ?");
+            $run = $query->execute([$id]);
                 if($run){
                 $_SESSION['user'] = $user;
                 $_SESSION['chatkey'] = $id;

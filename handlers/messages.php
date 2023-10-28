@@ -25,7 +25,20 @@
 
             $chat = '';
             foreach($rs as $message){
-                $chat .= '<div class="single-message"><strong>'.$message->user.': </strong>'.$message->message.'<span>'.date('d-m-Y H:i:s', strtotime($message->date)).'</span></div>';
+
+                if($message->user == $_SESSION['user']){
+                    $style = 'style="border: 3px solid green; background: lightgreen"';
+                }else{
+                    $style = 'style="border: 3px solid gray; background: lightgray"';
+                }
+
+                $chat .= 
+                '<div class="single-message"'.$style.'>
+                    <strong>'.$message->user.': </strong>
+                    <br>'.$message->message.
+                    '<span>'.date('d-m-Y H:i:s', strtotime($message->date)).
+                    '</span>
+                </div>';
             }
             echo $chat;
 
